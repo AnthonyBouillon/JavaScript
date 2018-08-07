@@ -1,0 +1,54 @@
+<script>
+    /**
+     *
+     * LES VARIABLES
+     *
+     */
+    alert('Hello world !'); // FONCTION : Affiche une boite de dialogue
+    /* ************************************************************************************ */
+    var maVariable = 2; // Déclarer et assigner une variable
+    /* ************************************************************************************ */
+    alert(typeof maVariable); // INSTRUCTION : Vérifie l'existence et le type d'une variable
+    /* ************************************************************************************ */
+    /* Addition */
+    var result = 3 + 2;
+    alert(result); // Affiche le résultat de l'addition
+    var number_1 = 3,
+        number_2 = 2,
+        result;
+    result = number_1 + number_2;
+    alert(result); // Affiche le résultat de la valeur de number_1 + number_2
+    var number = 3;
+    number = number + 5; // Version longue
+    var number = 3;
+    number += 5; // Version courte
+    /* ************************************************************************************ */
+    /* La Concaténation */
+    var space = ' ';
+    var text = 'Bonjour';
+    text = text + space + 'Bonnie'; // Concaténer des éléments ensemble
+    var result = text;
+    alert(result);
+    /* ************************************************************************************ */
+    /* prompt */
+    var genre = prompt("Etes-vous un homme ou une femme ?"); // FONCTION : renvoi la saisie en chaîne de caractères
+    alert(genre);
+    /* ************************************************************************************ */
+    /* parseInt */
+    var first, second, result;
+    first = prompt('Premier nombre');
+    second = prompt('Second nombre');
+    result = parseInt(first) + parseInt(second); // FONCTION : Converti une chaine de caractères en nombre
+    alert(result);
+    /* ************************************************************************************ */
+    /* Converti un nombre en chaine de caractères */
+    first = 15;
+    alert(typeof first); // INSTRUCTION : int
+    first = first + '';
+    alert(typeof first); // INSTRUCTION : string
+    /* ************************************************************************************ */
+    /* Vérifie si le nombre en est un */
+    if (isNaN(myVariable)) {
+        alert(`Ceci n'est pas un nombre`);
+    }
+</script>

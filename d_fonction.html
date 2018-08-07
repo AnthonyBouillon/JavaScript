@@ -1,0 +1,24 @@
+<script>
+    /** * * LES FONCTIONS * */
+    function myFunction(arg) {
+        alert('Votre argument : ' + arg);
+    }
+    myFunction(prompt('Que souhaitez-vous passer en argument à la fonction ? ')); // A l'intérieur des parenthèses ce trouve la valeur de l 'argument arg de la fonction
+    /* */
+    function moar(first, second) { // Si il y a plusieurs arguments 
+        alert('Votre premier argument : ' + first);
+        alert('Votre deuxième argument: ' + second);
+    }
+    moar( // La fonction est appelée avec les deux arguments ajoutés 
+        prompt(' Entrez votre premier argument: '),
+        prompt(' Entrez votre deuxième argument: ')
+    );
+    /* */
+    function sayHello() {
+        return ' Bonjour!';
+    }
+    alert(sayHello());
+    setInterval(function () {
+        // Toutes les secondes, le code sera executé
+    }, 1000);
+</script>

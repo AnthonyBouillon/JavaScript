@@ -1,0 +1,41 @@
+<script>
+    var myString = `Ceci est une chaîne de caractères.`;
+    alert(myString.length); // Affiche le nombre de caractères
+    alert(myString.toUpperCase()); // Affiche la chaine de caractères en majuscule
+    alert(myString.toLowerCase()); // Affiche la chaine de caractères en minuscule
+    /* *********************************************************************************** */
+    /* Ajouter / supprimer un élément, convertir un tableau ou une chaine de caractères */
+    var myArray = ['valeur_1', 'valeur_2', 'valeur_3']; // Créer un tableau
+    // alert(myArray[0]); // Affiche la première valeur d'un tableau
+    myArray[0] = 'valeur_1_modifier'; // Modifie la valeur d'un tableau
+    myArray.unshift('valeur_1(bis)'); // Ajoute un élément au début du tableau
+    myArray.push('valeur_4'); // Ajoute un élément à la fin du tableau
+    myArray.shift(); // Supprime le premier élément d'un tableau
+    myArray.pop(); // Supprime le dernier élément d'un tableau
+    var myString = 'value_1 value_2';
+    var myStringInArray = myString.split(' '); // Transforme la chaine de caractères en tableau
+    alert(myStringInArray);
+    var myArrayInString = myStringInArray.join(' '); // Transforme le tableau en chaine de caractères
+    alert(myArrayInString);
+    /* *********************************************************************************** */
+    /* Parcourir un tableau */
+    var myArray = ['Sébastien', 'Laurence', 'Ludovic', 'Pauline', 'Guillaume'];
+    // Le tableau comporte 5 mots mais l'indice commence par 0 jusqu'a 4
+    for (var i = 0; i < myArray.length; i++) {
+        //alert(myArray[i]);
+    }
+    /* *********************************************************************************** */
+    /* Les objets littéraux */
+    var myObject = {
+        identifiant_1: 'Valeur_1',
+        identifiant_2: 'Valeur_2'
+    }
+    alert(myObject['identifiant_1']); // Affiche la donnée de l'identifiant_1
+    var myVariable = 'identifiant_1';
+    alert(myObject[myVariable]); // Affiche la donnée de l'identifiant_1
+    myObject['identifiant_3'] = 'Valeur_3'; // Ajoute une valeur à notre objet
+    /* Parcourir un objet */
+    for (identifiant in myObject) {
+        alert(identifiant);
+    }
+</script>

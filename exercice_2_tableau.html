@@ -1,0 +1,11 @@
+<script>
+    var myArray = []; // Créer un tableau vide
+    var name; // Créer une variable vide
+    while (name = prompt(`Comment s'appelle ton/tes frère(s) ou ta/tes soeur(s) ?`)) { // Tant que la variable contient une valeur
+        myArray.push(name); // On ajoute la valeur au tableau
+        alert(myArray.join(' ')); // On converti et on affiche le tableau en chaine de caractères
+    }
+    if (myArray.length === 0) { // Si le tableau est strictement vide
+        alert('Aucun prenom en memoire'); // Message
+    }
+</script>

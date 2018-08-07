@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // On récupère la saisie de l'utilisateur
+        var age = prompt('Quel âge avez-vous ?');
+        // On converti la chaîne de caractères en nombre
+        age = parseInt(age);
+        // Si l'utilisateur à entre 1 ans et 17 ans => alert('Vous n\'êtes pas encore majeur.');
+        if (age >= 1 && age <= 17) {
+            alert(`Vous n'êtes pas encore majeur, vous avez ${age}.`);
+        } else if (age >= 18 && age <= 49) {
+            alert('Vous êtes majeur mais pas encore senior');
+        } else if (age >= 50 && age <= 59) {
+            alert('Vous êtes senior mais pas encore retraité.');
+        } else if (age >= 60 && age <= 120) {
+            alert('Vous êtes retraité, profitez de votre temps libre !');
+            // Si ce n'est rien de tout ça ! => alert('Ne mentez pas sur votre âge !');
+        } else {
+            alert('Ne mentez pas sur votre âge !');
+        }
+    </script>
+</body>
+
+</html>

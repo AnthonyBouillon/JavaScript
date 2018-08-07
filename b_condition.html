@@ -1,0 +1,29 @@
+<script>
+    if (true) {
+        /* ... */
+    } else {
+        /* ... */
+    }
+    if (confirm('TRUE ou FALSE')) {
+        /* retourne un booléen en fonction de l'action de l'utilisateur */
+    }
+    var monResultat = Math.floor(Math.random() * 6); // Génère un nombre entier entre 0 et 5; switch (monResultat)
+    switch (monResultat) {
+        case 1:
+            alert('Contient divers outils pour dessiner : du papier, des crayons, etc.');
+            break;
+        case 2:
+            alert('Contient du matériel informatique: des câbles, des composants, etc.');
+            break;
+        case 3:
+            alert('Ah ? Ce tiroir est fermé à clé!Dommage!');
+            break;
+        case 4:
+            alert('Contient des vêtements : des chemises, des pantalons, etc.');
+            break;
+        default:
+            alert(
+                "Info dujour: le meuble ne contient que 4 tiroirs et, jusqu 'à preuve du contraire, les tiroirs négatifs n'existent pas."
+            );
+    }
+</script>

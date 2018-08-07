@@ -1,0 +1,21 @@
+<script>
+    /* ************************************************************************************ */
+    /** * * LES BOUCLES * */
+    var number = 0;
+    number++; // 0 + 1 : Incrémentation var number_2 = 0; number_2--; // 0 - 1 : Décrémentation 
+    /* WHILE */
+    var name = '';
+    var ALLnames;
+    var proceed = true;
+    while (proceed) { // Tant que proceed est égale à true, tu continue d'executer name = prompt('Donne moi des noms');
+        if (name != null) { // Si la saisie de l'utilisateur n'est pas vide if (ALLnames === undefined)
+            {
+                ALLnames = '';
+            }
+            ALLnames = ALLnames + name + ' '; // On ajoute la valeur de la variable + une nouvel valeur séparé part un espace dans une variable
+        } else {
+            proceed = false; // On arrête la boucle 
+        }
+        alert(ALLnames);
+    }
+</script>
