@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DOM</title>
+</head>
+
+<body>
+    <a href="" id="a" title="Titre">Un lien modifié en
+        <strong>javascript</strong>
+    </a>
+    <script>
+        document.getElementById('myP'); // Récupère l'id
+        document.getElementsByTagName('p'); // Récupère la balise
+        document.getElementsByName('username'); // Récupère le name de l'input
+        document.querySelector('#menu'); // Inconnu
+        document.querySelectorAll('#menu'); // Inconnu
+        // Modifie le title d'un lien
+        document.getElementById('a').title = 'Un title';
+        // Ajoute une classe
+        document.getElementById('a').classList.add('pink');
+        // Retire une classe
+        document.getElementById('a').classList.remove('pink');
+        // Retire une classe si elle est présente ou bien l'ajoute si elle est absente
+        document.getElementById('a').classList.toggle('pink');
+        alert(document.getElementById('a').innerHTML); // Affiche le texte
+        alert(document.getElementById('a').innerText); // Affiche le texte
+        alert(document.getElementById('a').innerHTML = '<p>dfdfdfdf</p><p>dddd</p>'); // Affiche le texte sans les balises (Les balises font partie du HTML)
+        alert(document.getElementById('a').innerText = '<p>dfdfdfdf</p><p>dddd</p>'); // Affiche le texte avec les balises
+    </script>
+    <style>
+        .pink {
+            color: pink;
+        }
+    </style>
+</body>
+
+</html>
