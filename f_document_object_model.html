@@ -9,27 +9,65 @@
 </head>
 
 <body>
-    <a href="" id="a" title="Titre">Un lien modifié en
-        <strong>javascript</strong>
-    </a>
+    <div id="div">
+        <a href="" id="a" title="Titre">Un lien modifié en
+            <strong>javascript</strong>
+        </a>
+    </div>
+    <p class="paragraph">paragraphe 1</p>
+    <p class="paragraph">paragraphe 2</p>
+    <p class="paragraph">paragraphe 3</p>
     <script>
+        /*  ******************************************************************************  */
         document.getElementById('myP'); // Récupère l'id
+        /* ****************************************************************************** */
+        for (var i = 0; i < document.getElementsByClassName('paragraph').length; i++) { // Récupère les classes
+            paragraph = document.getElementsByClassName('paragraph');
+            paragraph[i];
+        }
+        /* ****************************************************************************** */
         document.getElementsByTagName('p'); // Récupère la balise
         document.getElementsByName('username'); // Récupère le name de l'input
         document.querySelector('#menu'); // Inconnu
         document.querySelectorAll('#menu'); // Inconnu
-        // Modifie le title d'un lien
+        /* ****************************************************************************** */
+        // Ajoute ou Modifie les attributs d'un lien
         document.getElementById('a').title = 'Un title';
+        document.getElementById('a').id = 'id';
+        document.getElementById('a').href = 'http://a.com';
+        /* ****************************************************************************** */
         // Ajoute une classe
         document.getElementById('a').classList.add('pink');
         // Retire une classe
         document.getElementById('a').classList.remove('pink');
         // Retire une classe si elle est présente ou bien l'ajoute si elle est absente
         document.getElementById('a').classList.toggle('pink');
-        alert(document.getElementById('a').innerHTML); // Affiche le texte
-        alert(document.getElementById('a').innerText); // Affiche le texte
-        alert(document.getElementById('a').innerHTML = '<p>dfdfdfdf</p><p>dddd</p>'); // Affiche le texte sans les balises (Les balises font partie du HTML)
-        alert(document.getElementById('a').innerText = '<p>dfdfdfdf</p><p>dddd</p>'); // Affiche le texte avec les balises
+        /* ****************************************************************************** */
+        document.getElementById('a').innerHTML; // Affiche le texte
+        document.getElementById('a').innerText; // Affiche le texte
+        document.getElementById('a').innerHTML = 'Un lien'; // Affiche le texte sans les balises (Les balises font partie du HTML)
+        document.getElementById('a').innerText = 'Un lien'; // Affiche le texte avec les balises
+        /* ****************************************************************************** */
+        // La propriété parentNodepermet d'accéder à l'élément parent d'un élément (en occurence : la div)
+        document.getElementById('a').parentNode;
+        // nodeName, quant à lui, retourne simplement le nom de l'élément, en majuscule (a href)
+        document.getElementById('a').nodeName.toLowerCase();
+        /* ****************************************************************************** */
+        // Ajouter des éléments HTML
+        var newLink = document.createElement('a');
+        newLink.href = 'https://anthony-bouillon.fr';
+        newLink.id = 'newLink';
+        newLink.title = 'Titre du nouveau lien';
+        newLink.innerText = 'CV numérique';
+        document.getElementById('div').appendChild(newLink); // Ajoute le lien dans la div
+        /* ****************************************************************************** */
+        // Cloner un élément (le deuxième lien est le même que le premier)
+        var newLink2 = newLink.cloneNode(true);
+        newLink2.innerText = 'CV numérique cloné';
+        /* ****************************************************************************** */
+        document.getElementById('div').appendChild(newLink2); // Ajoute l'élément
+        document.getElementById('div').removeChild(newLink2); // Supprime l'élément
+        document.getElementById('div').insertBefore(newLink2, newLink); // Insert un élément avant un autre (on insert newLink2 avant newLink)
     </script>
     <style>
         .pink {

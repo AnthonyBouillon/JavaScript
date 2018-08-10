@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Les évènements</title>
+</head>
+
+<body>
+    <p id="paragraph">Clique ici ou là !</p>
+    <p id="position">Un paragraphe</p>
+    <div id="myDiv">
+        <div>Texte 1</div>
+        <div>Texte 2</div>
+        <div>Texte 3</div>
+        <div>Texte 4</div>
+    </div>
+    <div id="results"></div>
+    <script>
+        /* ****************************************************************************** */
+        /*
+         *   Ajouter "on" devant l'évènement sans le DOM
+         *   event.preventDefault ou return false permet d'annuler l'execution d'un lien, submit ou autre
+         *   click : Cliquer(appuyer puis relâcher) sur l 'élément 
+         *   dblclick : Double-cliquer sur l'élément mouseover Faire entrer le curseur sur l 'élément 
+         *   mouseout : Faire sortir le curseur de l'élément 
+         *   mousedown : Appuyer(sans relâcher) sur le bouton gauche de la souris sur l 'élément 
+         *   mouseup : Relâcher le bouton gauche de la souris sur l'élément 
+         *   mousemove : Faire déplacer le curseur sur l 'élément
+         *   keydown : Appuyer (sans relâcher) sur une touche de clavier sur l'élément
+         *   keyup : Relâcher une touche de clavier sur l 'élément
+         *   keypress : Frapper (appuyer puis relâcher) une touche de clavier sur l'élément
+         *   focus : « Cibler» l 'élément
+         *   blur : Annuler le « ciblage» de l 'élément
+         *   change : Changer la valeur d'un élément spécifique aux formulaires(input, checkbox, etc.)
+         */
+        /*
+         * this : propriété pointant sur l'objet actuellement en cours d'utilisation
+         */
+        /* ****************************************************************************** */
+        // L'objet EVENT + PROPRIETER
+        //console.log(event.type); // Connaitre le type d'évènement utilisé (click) 
+        //event.target.innerText = 'Change le texte du paragraphe après avoir cliqué ';
+        //console.log(event.target.id); // Affiche l'id du paragraphe
+        var positions = document.getElementById('position');
+
+        function position(event) {
+            // les proprietés clientX et clientY sont la position horizontal et verticial du curseur
+            positions.innerHTML =
+                `Position horizontal: ${event.clientX} px <br/> Position vertical: ${event.clientY} px`;
+        }
+        // L'évènement mousemove : déplacement de la souris détecté sur tout la page (document)
+        document.addEventListener('mousemove', position);
+        /* ****************************************************************************** */
+        /* 
+         * EVENEMENT CLICK
+         * On récupère l'id du paragraphe
+         * La méthode addEventListener prend deux paramètres : Le nom de l 'événement (sans les lettres « on ») et La fonction anonyme à exécuter
+         */
+        var paragraph = document.getElementById('paragraph');
+        paragraph.addEventListener('click', function (event) {
+            console.log('Bonjour à tous !');
+            console.log(event.type); // Connaitre le type d'évènement utilisé (click)
+            event.target.innerText = 'Change le texte du paragraphe après avoir cliqué';
+            console.log(event.target.id); // Affiche l'id du paragraphe
+        });
+        // OU
+        function myFunction() {
+            console.log('Bonne nuit');
+        }
+        paragraph.addEventListener('click', myFunction);
+        // Supprimer l'évènement
+        paragraph.removeEventListener('click', myFunction);
+        /* ****************************************************************************** */
+        // EVENEMENT MOUSEOVER et MOUSEOUT
+        var myDiv = document.getElementById('myDiv');
+        var results = document.getElementById('results');
+        myDiv.addEventListener('mouseover', function () {
+            results.innerHTML = "Le curseur vient d'entrer. <br/>";
+        });
+        myDiv.addEventListener('mouseout', function () {
+            results.innerHTML = 'Le curseur vient de sortir. <br/>';
+        });
+    </script>
+</body>
+
+</html>
