@@ -9,9 +9,60 @@
 </head>
 
 <body>
+    <input type="text" id="text" value="" />
+    <br />
+    <input type="radio" name="check" value="1" /> Case n°1
+    <br />
+    <input type="radio" name="check" value="2" /> Case n°2
+    <br />
+    <input type="radio" name="check" value="3" /> Case n°3
+    <br />
+    <input type="radio" name="check" value="4" /> Case n°4
+    <input type="button" value="Afficher la case cochée" onclick="check();" />
+    <hr/>
+    <select id="list">
+        <option>Sélectionnez votre sexe</option>
+        <option>Homme</option>
+        <option>Femme</option>
+    </select>
     <style>
     </style>
     <script>
+        /* ****************************************************************** */
+        // CHANGE LA VALEUR D'UN CHAMP
+        var text = document.getElementById('text');
+        // On désactive l'input
+        text.disabled = true;
+
+        function focus(event) {
+            // Change la valeur de l'input
+            event.target.value = 'Vous avez le focus';
+        }
+
+        function blur(event) {
+            event.target.value = 'Vous n\'avez pas le focus';
+        }
+
+        // L'évènement est focus et la fonction appelé est focus
+        text.addEventListener('focus', focus);
+        text.addEventListener('blur', blur);
+        /* ****************************************************************** */
+        // RECUPERE LA VALEUR DU BOUTON RADIO
+        function check() {
+            var inputs = document.querySelectorAll('input:checked');
+            var inputsLength = inputs.length;
+            for (var i = 0; i < inputsLength; i++) {
+                alert('La case cochée est la n°' + inputs[i].value);
+            }
+        }
+        /* ****************************************************************** */
+        // RECUPERE LA VALEUR DU SELECT 
+        var list = document.getElementById('list');
+
+        function Change() {
+            alert(list.options[list.selectedIndex].textContent);
+        }
+        list.addEventListener('change', Change);
     </script>
 </body>
 
