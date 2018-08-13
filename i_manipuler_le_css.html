@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="master.css">
+    <title>Manipuler le css</title>
+</head>
+
+<body>
+  <div id="div">
+      Couleur de fond orange
+  </div>
+
+    <script>
+    // Acccéder à l'élément style
+    //element.style;
+    //element.style.width = "150 px";
+    // Accéder à une propriété qui comporte un tiret
+    //element.style.backgroundColor = "blue";
+    var div = document.getElementById('div');
+    alert(getComputedStyle(div).color); // Permet de récupérer la couleur de l'élément css (orange)
+    alert(div.offsetWidth); // Permet de connaitre la largeur de l'élément
+    alert(div.offsetHeight); // Permet de connaire la hauteur de l'élément
+    offsetHeight
+    </script>
+</body>
+
+</html>

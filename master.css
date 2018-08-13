@@ -1,0 +1,15 @@
+label {
+  width: 150px;
+}
+.red{
+  color: red;
+}
+.green{
+  color: green;
+}
+.borderRed{
+  border: 2px solid red;
+}
+.borderGreen{
+  border: 2px solid green;
+}
